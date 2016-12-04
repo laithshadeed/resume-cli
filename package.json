@@ -31,7 +31,7 @@
     "read": "~1.0.7",
     "resume-schema": "git://github.com/laithshadeed/resume-schema.git",
     "resume-to-html": "latest",
-    "resume-to-text": "latest",
+    "resume-to-text": "git://github.com/laithshadeed/resumeToText.git",
     "should": "^11.1.0",
     "superagent": "^2.0.0",
     "terminal-menu": "^2.1.1"
