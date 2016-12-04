@@ -20,8 +20,10 @@ lib.preFlow(function(err, results) {
     .option('-t, --theme <theme name>', 'Specify theme for export or publish (modern, traditional, crisp)', 'flat')
     .option('-F, --force', 'Used by `publish` - bypasses schema testing.')
     .option('-f, --format <file type extension>', 'Used by `export`.')
+    .option('-r, --resume <resume filename>', 'Used by `serve` (default: resume.json)', path.join(process.cwd(), 'resume.json'))
     .option('-p, --port <port>', 'Used by `serve` (default: 4000)', 4000)
-    .option('-s, --silent', 'Used by `serve` to tell it if open browser auto or not.', false);
+    .option('-s, --silent', 'Used by `serve` to tell it if open browser auto or not.', false)
+    .option('-d, --dir <path>', 'Used by `serve` to indicate a public directory path.', 'public');
 
   program
     .command('init')
@@ -62,10 +64,10 @@ lib.preFlow(function(err, results) {
 
   program
     .command('export [fileName]')
-    .description('Export locally to .html, .md or .pdf. Supply a --format <file format> flag and argument to specify export format.')
+    .description('Export locally to .html or .pdf. Supply a --format <file format> flag and argument to specify export format.')
     .action(function(fileName) {
       lib.exportResume(resumeJson, fileName, program, function(err, fileName, format) {
-        console.log(chalk.green('\nDone! Find your new', format, 'resume at:\n', path.resolve(process.cwd(), fileName + '.' + format)));
+        console.log(chalk.green('\nDone! Find your new', format, 'resume at:\n', path.resolve(process.cwd(), fileName + format)));
       });
     });
 
@@ -80,7 +82,7 @@ lib.preFlow(function(err, results) {
     .command('serve')
     .description('Serve resume at http://localhost:4000/')
     .action(function() {
-      lib.serve(program.port, program.theme, program.silent);
+      lib.serve(program.port, program.theme, program.silent, program.dir, program.resume);
     });
 
   program.parse(process.argv);
