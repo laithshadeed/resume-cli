@@ -987,11 +987,11 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
-"resume-schema@git://github.com/laithshadeed/resume-schema.git":
+"resume-schema@git://github.com/laithshadeed/resume-schema.git#v1.0.0":
   version "0.0.16"
-  resolved "git://github.com/laithshadeed/resume-schema.git#7a19396b01ea6ef3dedf46cef234383ebbba1db8"
+  resolved "git://github.com/laithshadeed/resume-schema.git#1d3a6f9d98187b9bf16e4710d39525439bfbe1cd"
   dependencies:
-    z-schema "~2.4.10"
+    z-schema "~2.4.8"
 
 resume-schema@latest:
   version "0.0.16"
@@ -1327,7 +1327,7 @@ yauzl@2.4.1:
   dependencies:
     fd-slicer "~1.0.1"
 
-z-schema@~2.4.10, z-schema@~2.4.8:
+z-schema@~2.4.8:
   version "2.4.10"
   resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-2.4.10.tgz#1ef1f4433a7a773ee4cd5494bf1af30b318366eb"
   dependencies:
